@@ -1,5 +1,9 @@
 pipeline {
-    agent { node { label 'pkgbuild' } }
+agent {
+    docker {
+        image 'python:latest'
+    }
+}
     stages {
 
         stage('Build') { 

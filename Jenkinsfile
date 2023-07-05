@@ -3,7 +3,7 @@ pipeline {
         node {
             label pkgbuild
         }
-
+    }
     stages {
 
         stage('Build') { 

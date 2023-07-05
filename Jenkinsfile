@@ -13,7 +13,6 @@ agent {
                     hostname
                     pwd
                     ls -l
-                    ls -l ./distr
                     python3 -m pip install --upgrade build
                     python3 -m build
                 """                

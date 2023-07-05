@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label pkgbuild
+            label slave_name
         }
     }
     stages {

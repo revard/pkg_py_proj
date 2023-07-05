@@ -32,7 +32,7 @@ agent {
                     pwd
                     ls -l
                     ls -l ./dist
-                    python3 -m twine upload --repository  ./dist/* -u%username% -p%password%
+                    python3 -m twine upload --repository  dist/* -u%username% -p%password%
                 """        
             }
         }

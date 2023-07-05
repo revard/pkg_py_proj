@@ -13,6 +13,7 @@ agent {
                     hostname
                     pwd
                     ls -l
+                    ls -l ./distr
                     python3 -m pip install --upgrade build
                     python3 -m build
                 """                
@@ -26,7 +27,8 @@ agent {
                 sh """
                     hostname
                     pwd
-                    ls -l                   
+                    ls -l
+                    ls -l ./distr                  
                     python3 -m pip install --upgrade twine
                     python3 -m twine upload --repository  dist/* -u%username% -p%password%
                 """        

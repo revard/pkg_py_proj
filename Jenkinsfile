@@ -29,6 +29,9 @@ agent {
                     ls -l
                     ls -l ./dist                 
                     python3 -m pip install --upgrade twine
+                    pwd
+                    ls -l
+                    ls -l ./dist
                     python3 -m twine upload --repository  ./dist/* -u%username% -p%password%
                 """        
             }

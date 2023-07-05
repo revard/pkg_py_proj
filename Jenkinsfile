@@ -1,5 +1,9 @@
 pipeline {
-    agent none
+    agent {
+        node {
+            label pkgbuild
+        }
+
     stages {
 
         stage('Build') { 

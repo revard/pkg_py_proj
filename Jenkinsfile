@@ -27,7 +27,7 @@ agent {
                     hostname
                     pwd
                     ls -l
-                    ls -l ./distr                  
+                    ls -l ./dist                 
                     python3 -m pip install --upgrade twine
                     python3 -m twine upload --repository  dist/* -u%username% -p%password%
                 """        

@@ -26,12 +26,5 @@ pipeline {
                 }        
             }
         }
-        
-        stage('Deliver') {
-            agent any
-            steps {
-                sh "python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-package-YOUR-USERNAME-HERE"
-            }
-        }    
     }
 }

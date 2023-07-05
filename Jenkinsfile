@@ -10,9 +10,6 @@ agent {
             steps {
                 echo 'Generating distribution archives'
                 sh """
-                    hostname
-                    pwd
-                    ls -l
                     python3 -m pip install --upgrade build
                     python3 -m build
                 """                
@@ -23,16 +20,9 @@ agent {
             steps {
                 echo 'Deploying....'
                 echo 'Generating distribution archives'
-                sh """
-                    hostname
-                    pwd
-                    ls -l
-                    ls -l ./dist                 
+                sh """            
                     python3 -m pip install --upgrade twine
-                    pwd
-                    ls -l
-                    ls -l ./dist
-                    python3 -m twine upload --repository  dist/* -u%username% -p%password%
+                    python3 -m twine upload --repository testpypi dist/* -u%username% -p%password%
                 """        
             }
         }

@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label slave_name
-        }
-    }
+    agent { node { label 'pkgbuild' } }
     stages {
 
         stage('Build') { 

@@ -1,4 +1,5 @@
 pipeline {
+    
 agent {
     docker {
         image 'python:latest'
@@ -19,14 +20,11 @@ agent {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:writerServerCredId,
-                                usernameVariable: 'TWINE_USERNAME', passwordVariable: 'TWINE_PASSWORD']
-                ]) {
-                    echo 'Generating distribution archives'
-                    sh """
-                        python3 -m pip install --upgrade twine
-                        python3 -m twine upload --repository testpypi dist/*
-                    """
+                echo 'Generating distribution archives'
+                sh """
+                    python3 -m pip install --upgrade twine
+                    python3 -m twine upload --repository  dist/* -u%username% -p%password%
+                """
                 }        
             }
         }

@@ -12,6 +12,7 @@ agent {
                 sh """
                     hostname
                     pwd
+                    ls -l
                     python3 -m pip install --upgrade build
                     python3 -m build
                 """                
@@ -24,7 +25,8 @@ agent {
                 echo 'Generating distribution archives'
                 sh """
                     hostname
-                    pwd                   
+                    pwd
+                    ls -l                   
                     python3 -m pip install --upgrade twine
                     python3 -m twine upload --repository  dist/* -u%username% -p%password%
                 """        

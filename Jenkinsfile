@@ -18,12 +18,15 @@ agent {
         
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
-                echo 'Generating distribution archives'
-                sh """            
-                    python3 -m pip install --upgrade twine
-                    python3 -m twine upload --repository testpypi dist/* -u%username% -p%password%
-                """        
+            environment {
+                TEST_PYPI_CREDS = credentials('test-pypi')
+            }                
+            echo 'Deploying....'
+            echo 'Generating distribution archives'
+            sh """            
+                python3 -m pip install --upgrade twine
+                python3 -m twine upload --repository testpypi dist/* -u%${TEST_PYPI_CREDS_USR}% -p%${TEST_PYPI_CREDS_PWD}%
+            """        
             }
         }
     }

@@ -25,7 +25,7 @@ agent {
             echo 'Generating distribution archives'
             sh """            
                 python3 -m pip install --upgrade twine
-                python3 -m twine upload --repository testpypi dist/* -u%${TEST_PYPI_CREDS_USR}% -p%${TEST_PYPI_CREDS_PSW}%
+                python3 -m twine upload --repository testpypi dist/* -u ${TEST_PYPI_CREDS_USR} -p ${TEST_PYPI_CREDS_PSW}
             """        
             }
         }

@@ -1,7 +1,5 @@
 # pkg_py_proj
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+This project is simple Jenkins file for packaging python project - https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 Before use test.pypi.og upload you need to setup secretes in Jenkins - https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#usernames-and-passwords

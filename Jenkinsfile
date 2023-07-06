@@ -17,10 +17,10 @@ agent {
         }
         
         stage('Deploy') {
-            steps {
             environment {
                 TEST_PYPI_CREDS = credentials('test-pypi')
-            }                
+            }               
+            steps {          
             echo 'Deploying....'
             echo 'Generating distribution archives'
             sh """            
